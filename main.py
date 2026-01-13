@@ -3,7 +3,6 @@ import streamlit as st
 from langchain_tavily import TavilySearch 
 import os
 from dotenv import load_dotenv
-import pywhatkit as kit
 from langchain_groq import ChatGroq
 import asyncio
 import time
@@ -199,24 +198,4 @@ st.markdown('<div class="section-title">Share</div>', unsafe_allow_html=True)
 
 
 
-if not st.session_state.whatsapp_sent:
-    send_whatsapp = st.button("📤 Send News Digest via WhatsApp")
-    if send_whatsapp:
-        if not st.session_state.answer:
-            st.warning("Generate the news digest first before sending.")
-        else:
-            with st.spinner("Preparing WhatsApp message…"):
-                time.sleep(3)  # 3–4s loading animation before the actual send
-            kit.sendwhatmsg_instantly(
-                "+923231578503",
-                st.session_state.answer.content,
-                wait_time=10,
-                tab_close=True,
-                close_time=3
-            )
-            st.session_state.whatsapp_sent = True
-            st.success("✅ Message sent via WhatsApp!")
-else:
-    st.info("Message already sent. Refresh to send again.")
-st.markdown('</div>', unsafe_allow_html=True)
 
