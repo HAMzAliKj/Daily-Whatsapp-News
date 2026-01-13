@@ -7,7 +7,7 @@ from langchain_groq import ChatGroq
 import asyncio
 import time
 
-api_key = os.getenv("tavily_api_key")
+api_key = "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"
 
 
 # ---------- Page & Styles ----------
@@ -194,6 +194,7 @@ if st.session_state.answer:
 # ---------- WhatsApp send (logic unchanged; added spinner) ----------
 st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Share</div>', unsafe_allow_html=True)
+
 
 
 
