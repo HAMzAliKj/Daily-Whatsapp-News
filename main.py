@@ -1,6 +1,5 @@
 
 import streamlit as st
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_tavily import TavilySearch 
 import os
 from dotenv import load_dotenv
@@ -120,7 +119,6 @@ if "answer" not in st.session_state:
     st.session_state.answer = ""
 
 api = os.getenv("groq")
-# llm = ChatGoogleGenerativeAI(model="gemini-2.5-pro", api_key="AIzaSyDMM4QsUlZVD4V0fdkn3Y2NdmXPxOSeis4")
 llm = ChatGroq(model="openai/gpt-oss-120b",api_key="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")
 
 tavily_api_key = os.getenv("TAVILY_API_KEY")
@@ -221,3 +219,4 @@ if not st.session_state.whatsapp_sent:
 else:
     st.info("Message already sent. Refresh to send again.")
 st.markdown('</div>', unsafe_allow_html=True)
+
