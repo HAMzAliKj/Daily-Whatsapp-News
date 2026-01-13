@@ -7,7 +7,7 @@ from langchain_groq import ChatGroq
 import asyncio
 import time
 
-api_key = os.getenv("tavily_api_key")
+api_key = "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"
 
 
 # ---------- Page & Styles ----------
@@ -117,7 +117,6 @@ load_dotenv()
 if "answer" not in st.session_state:
     st.session_state.answer = ""
 
-api = os.getenv("groq")
 llm = ChatGroq(model="openai/gpt-oss-120b",api_key="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")
 
 tavily_api_key = os.getenv("TAVILY_API_KEY")
@@ -195,6 +194,7 @@ if st.session_state.answer:
 # ---------- WhatsApp send (logic unchanged; added spinner) ----------
 st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Share</div>', unsafe_allow_html=True)
+
 
 
 
