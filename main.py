@@ -117,8 +117,8 @@ load_dotenv()
 if "answer" not in st.session_state:
     st.session_state.answer = ""
 
-api = os.getenv("GROQ_API_KEY")
-llm = ChatGroq(model="openai/gpt-oss-120b",api_key=api)
+
+llm = ChatGroq(model="openai/gpt-oss-120b",api_key="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")
 
 search_engine = TavilySearch(
     max_results=5,
@@ -194,5 +194,6 @@ if st.session_state.answer:
 # ---------- WhatsApp send (logic unchanged; added spinner) ----------
 st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">Share</div>', unsafe_allow_html=True)
+
 
 
