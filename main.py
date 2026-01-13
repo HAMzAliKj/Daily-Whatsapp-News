@@ -1,6 +1,5 @@
 
 import streamlit as st
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_tavily import TavilySearch 
 import os
 from dotenv import load_dotenv
@@ -220,4 +219,5 @@ if not st.session_state.whatsapp_sent:
 else:
     st.info("Message already sent. Refresh to send again.")
 st.markdown('</div>', unsafe_allow_html=True)
+
 
